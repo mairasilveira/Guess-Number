@@ -5,10 +5,10 @@ let attempt = document.getElementById('attempt');
 let result = document.getElementById('result');
 
 const Guess = {
-    max = 10,
-    attemptsNumber: 0
+    max: 10,
+    attemptsNumber: 0,
     numberDrawn: function randomValue() {
-        retur Math.round(Math.random() * this.max);
+        return Math.round(Math.random() * this.max);
     }
 }
 
@@ -38,15 +38,14 @@ function handleSubmit(e) {
         result.style.color = '#fff';
         status.style.color = '#fff';
         clear(); //para limpar o valor do input
-        else if(numberDrawn > kick) {
-            status.innerHTML = 'O número é maior!';
-            status.style.color = '#de4251';
-            clear();
-        } else if(numberDrawn < kick){
-            status.innerHTML = 'O número é menor!';
-            status.style.color = '#de4251';
-            clear();
-        }
+    } else if (numberDrawn > kick) {
+        status.innerHTML = 'O número é maior!';
+        status.style.color = '#de4251';
+        clear();
+    } else if (numberDrawn < kick) {
+        status.innerHTML = 'O número é menor!';
+        status.style.color = '#de4251';
+        clear();
     }
 }
 
