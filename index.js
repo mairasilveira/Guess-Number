@@ -1,5 +1,7 @@
 const form = document.getElementById('form');
 form.addEventListener('submit', handleSubmit);
+const restartButton = document.getElementById('btnRestart');
+restartButton.addEventListener('click', restart);
 let status = document.getElementById('status');
 let attempt = document.getElementById('attempt');
 let result = document.getElementById('result');
@@ -22,7 +24,7 @@ function handleSubmit(e) {
     e.preventDefault(); //para nao recarregar pag quando enviar formulário.
 
     let kick = document.getElementById('kick').value;
-
+    
     if (!kick) {
         alert('Digite um valor');
         return;
@@ -33,7 +35,7 @@ function handleSubmit(e) {
     if (numberDrawn == kick) {
         playAgain();
         status.innerHTML = 'Parabéns, acertou!';
-        result.style.transition = 0.4s;
+        result.style.transition = '0.4s';
         result.style.backgroundColor = '#37c978';
         result.style.color = '#fff';
         status.style.color = '#fff';
@@ -54,7 +56,9 @@ function playAgain() {
 }
 
 function restart() {
+    console.log("a")
     document.location.reload(true);
+    
 }
 
 function clear() {
