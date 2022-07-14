@@ -56,7 +56,6 @@ function playAgain() {
 }
 
 function restart() {
-    console.log("a")
     document.location.reload(true);
     
 }
